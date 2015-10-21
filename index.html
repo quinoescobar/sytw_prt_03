@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Práctica 2-Calculadora de Temperaturas en JS</title>
+    <link rel="stylesheet" href="reset.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="global.css" media="screen" title="no title" charset="utf-8">
+
+    <script type="text/javascript" src="temperatura.js">
+
+    </script>
+  </head>
+  <body>
+    <a href="https://quinoescobar.github.io">Página del Autor</a>
+    <a href="https://github.com/quinoescobar/sytw_prt_01">Enlace al Repositorio</a>
+    <h1>Calculadora de Temperatura</h1>
+    <table>
+      <tr>
+        <th>
+          Ingrese la Temperatura (e.g: 90F, 37C, -3.14f):
+        </th>
+        <td>
+          <input name="calcular" value="" id="original" autofocus onchange="calcular();" placeholder="434F" size="50">
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Resultado, temperatura convertida:
+        </th>
+        <td><span class="output" id="converted"></span></td>
+      </tr>
+    </table>
+
+  </body>
+</html>
