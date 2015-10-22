@@ -87,7 +87,7 @@ self.onmessage = function(objeto) {
   var result;
   var convertir = new Temperatura();
 
-  if( tipoW === 'C' || tipoW ==='c'){
+  if( tipoW == 'C' || tipoW =='c'){
 
     result = convertir.Celsius(valorW);
   }else{
@@ -113,7 +113,7 @@ function descomponerInput()
     return(ingresado);
   }
   else {
-    console.error("missing target");
+    console.error("ERROR, parece que ha ingresado algo que no debe, [-,+] [Número] [Medida] e.g: '-4.2C' ");
     converted.innerHTML = "¡ERROR! Intente con valores correctos [-,+] [Número] [Medida] e.g: '-4.2C' ";
   }
 
