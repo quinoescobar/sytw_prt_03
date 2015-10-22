@@ -6,6 +6,7 @@ var del     = require('del');
 var mocha   = require('gulp-mocha');
 var minifyHTML = require('gulp-minify-html');
 var minifyCSS  = require('gulp-minify-css');
+var karma   = require('gulp-karma');
 
 gulp.task('minify', function () {
   gulp.src('temperature.js')
