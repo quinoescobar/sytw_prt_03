@@ -35,7 +35,7 @@ Temperatura.prototype= new Medida();
 
 Temperatura.prototype.Celsius = function ()
 {
-  
+
   var calculado = (this.getValor() * 9/5)+32;
   calculado = calculado.toFixed(1)+" Farenheit";
 
@@ -53,9 +53,45 @@ Temperatura.prototype.Farenheit = function ()
 
 function calcularW()
 {
+  ingresadoW = new Temperatura();
+  if (window.Worker)
+  { //check if Browser supports the Worker api.
+  	// Requires script name as input
+  	ingresadoW.calcularW()
+
+    myWorker.postMessage([first.value,second.value]);
+    console.log('Mensaje enviado al worker');
 
 
+  	myWorker.onmessage = function(e)
+    {
+  		result.textContent = e.data;
+  		console.log('Mensaje recibido del worker');
+	  };
+
+  }
 }
+
+
+function descomponerInput()
+{
+  var result;
+  var original = document.getElementById("original");
+  var temp = original.value;
+  var mejorRegex = /(^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)\s*([fFcC])/;
+  var x = temp.match(mejorRegex);
+  if (x)
+  {
+    this.valor = ingresado.setValor(parseFloat(x[1]));
+    this.tipo = ingresado.setTipo(x[2]);
+  }
+  else {
+    console.error("missing target");
+    converted.innerHTML = "¡ERROR! Intente con valores correctos [-,+] [Número] [Medida] e.g: '-4.2C' ";
+  }
+}
+
+
 
 
 function calcular()
