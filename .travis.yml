@@ -11,5 +11,5 @@ before_install:
 branches:
   only:
     - travis
-script:
-- ./node_modules/karma/bin/karma start --single-run    
+# script:
+# - ./node_modules/karma/bin/karma start --single-run

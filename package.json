@@ -9,8 +9,8 @@
 
 
   "scripts": {
-    "test": "open  http://localhost:3000/tests/index.html"
-
+    "test": "open  http://localhost:3000/tests/index.html",
+    "karma": "./node_modules/karma/bin/karma start --single-run"
 
   },
 
