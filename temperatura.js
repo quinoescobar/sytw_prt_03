@@ -33,19 +33,19 @@ function Temperatura(valor,tipo)
 
 Temperatura.prototype= new Medida();
 
-Temperatura.prototype.Celsius = function ()
+Temperatura.prototype.Celsius = function (wValor)
 {
-
-  var calculado = (this.getValor() * 9/5)+32;
+  console.error("Dentro de Celsius");
+  var calculado = (wValor * 9/5)+32;
   calculado = calculado.toFixed(1)+" Farenheit";
 
   return calculado;
 };
 
-Temperatura.prototype.Farenheit = function ()
+Temperatura.prototype.Farenheit = function (wValor)
 {
-
-  var calculado2= (this.getValor() - 32)*5/9;
+  console.error("Dentro de Farenheit");
+  var calculado2= (wValor - 32)*5/9;
   calculado2 = calculado2.toFixed(1)+" Celsius";
 
   return calculado2;
@@ -58,32 +58,39 @@ function calcularW()
   	// Requires script name as input
     console.log("Los Web Worker  son soporatos.");
     var myWorker = new Worker("temperatura.js");
+    //A web worker is a JavaScript running in the background,
+    //without affecting the performance of the page.
     recibido = descomponerInput();
   	myWorker.postMessage([recibido.valor,recibido.tipo]);
     console.log('Mensaje enviado al worker :'+ recibido.valor + " "+ recibido.tipo);
-
-  	myWorker.onmessage = function(e)
+    myWorker.onmessage = function(e)
     {
-  		result.textContent = e.data;
-  		console.log('Mensaje recibido del worker');
-      Calcular();
-	  };
+      console.log('Mensaje recibido del worker');
+      console.log(e.data);
+      converted.innerHTML = e.data;
+    };
+
 
   }else
   {
     console.log("Los Web Worker no son soporatos.");
+    Calcular();
   }
 }
 
 self.onmessage = function(objeto) {
-  console.log('OBJETO = ' + objeto.data[0] +'  '+objeto.data[1]);
+  var valorW = objeto.data[0];
+  var tipoW = objeto.data[1];
+  console.log('OBJETO = ' + valorW +'  '+tipoW);
   console.log("Convirtiendo Temperatura");
   var result;
-  if(objeto.data[1] === 'C' || objeto.data[1] ==='c'){
+  var convertir = new Temperatura();
 
+  if( tipoW === 'C' || tipoW ==='c'){
 
+    result = convertir.Celsius(valorW);
   }else{
-
+    result = convertir.Farenheit(valorW);
   }
 
   self.postMessage(result);
