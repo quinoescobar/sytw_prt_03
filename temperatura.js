@@ -74,6 +74,7 @@ function calcularW()
   }else
   {
     console.log("Los Web Worker no son soporatos.");
+    //Ya no funciona Calcular(), se ha modificado los métodos Celsius and Farenheit
     Calcular();
   }
 }
