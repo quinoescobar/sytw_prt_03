@@ -66,6 +66,7 @@ function calcularW()
     {
   		result.textContent = e.data;
   		console.log('Mensaje recibido del worker');
+      Calcular();
 	  };
 
   }else
@@ -74,6 +75,19 @@ function calcularW()
   }
 }
 
+self.onmessage = function(objeto) {
+  console.log('OBJETO = ' + objeto.data[0] +'  '+objeto.data[1]);
+  console.log("Convirtiendo Temperatura");
+  var result;
+  if(objeto.data[1] === 'C' || objeto.data[1] ==='c'){
+
+
+  }else{
+
+  }
+
+  self.postMessage(result);
+};
 
 function descomponerInput()
 {
@@ -87,7 +101,7 @@ function descomponerInput()
     var ingresado = new Temperatura();
     ingresado.setValor(parseFloat(x[1]));
     ingresado.setTipo(x[2]);
-    console.log(ingresado.getValor()+"   "+ingresado.getTipo());
+    //console.log(ingresado.getValor()+"   "+ingresado.getTipo());
     return(ingresado);
   }
   else {
