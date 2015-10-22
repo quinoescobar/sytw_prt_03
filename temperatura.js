@@ -53,15 +53,14 @@ Temperatura.prototype.Farenheit = function ()
 
 function calcularW()
 {
-  ingresadoW = new Temperatura();
   if (window.Worker)
   { //check if Browser supports the Worker api.
   	// Requires script name as input
-  	ingresadoW.calcularW()
-
-    myWorker.postMessage([first.value,second.value]);
-    console.log('Mensaje enviado al worker');
-
+    console.log("Los Web Worker  son soporatos.");
+    var myWorker = new Worker("temperatura.js");
+    recibido = descomponerInput();
+  	myWorker.postMessage([recibido.valor,recibido.tipo]);
+    console.log('Mensaje enviado al worker :'+ recibido.valor + " "+ recibido.tipo);
 
   	myWorker.onmessage = function(e)
     {
@@ -69,6 +68,9 @@ function calcularW()
   		console.log('Mensaje recibido del worker');
 	  };
 
+  }else
+  {
+    console.log("Los Web Worker no son soporatos.");
   }
 }
 
@@ -82,16 +84,18 @@ function descomponerInput()
   var x = temp.match(mejorRegex);
   if (x)
   {
-    this.valor = ingresado.setValor(parseFloat(x[1]));
-    this.tipo = ingresado.setTipo(x[2]);
+    var ingresado = new Temperatura();
+    ingresado.setValor(parseFloat(x[1]));
+    ingresado.setTipo(x[2]);
+    console.log(ingresado.getValor()+"   "+ingresado.getTipo());
+    return(ingresado);
   }
   else {
     console.error("missing target");
     converted.innerHTML = "¡ERROR! Intente con valores correctos [-,+] [Número] [Medida] e.g: '-4.2C' ";
   }
+
 }
-
-
 
 
 function calcular()
