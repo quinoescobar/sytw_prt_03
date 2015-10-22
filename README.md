@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/quinoescobar/sytw_prt_03.svg)](https://travis-ci.org/quinoescobar/sytw_prt_03)
-# Práctica 3- Contenido
+# Práctica 3- Contenido[![Build Status](https://travis-ci.org/quinoescobar/sytw_prt_03.svg)](https://travis-ci.org/quinoescobar/sytw_prt_03)
 
 Este repositorio contiene la primera práctica de la asignatura Sistemas y Tencologías Web.
 La práctica consiste en realizar un conversor de temperaturas de grados Celsius a grados Farenheit y viceversa, utilizando NodeJS y JavaScript para la creación de la función que calcula la temperatura.

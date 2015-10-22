@@ -4,7 +4,9 @@
   "description": "Práctica que mejora el conversor de temperatura, ahora usando herencia, clases en javascript y BDD y otras cositas",
   "main": "temperatura.js",
   "scripts": {
-    "test": "open /tests/index.html"
+    "test": "open /tests/index.html",
+    "karma": "node_modules/karma/bin/karma start"
+
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,11 @@
   },
   "homepage": "https://github.com/quinoescobar/sytw_prt_02#readme",
   "devDependencies": {
+    "karma": "*",
+    "karma-mocha": "*",
+    "karma-chai": "*",
+    "karma-html2js-preprocessor": "*",
+    "karma-firefox-launcher": "*",
     "mocha":"2.3.3",
     "chai": "^3.3.0",
     "del": "^2.0.2",
