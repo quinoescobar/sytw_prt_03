@@ -33,7 +33,7 @@ function Temperatura(valor,tipo)
 
 Temperatura.prototype= new Medida();
 
-Temperatura.prototype.Celsius = function ()
+Temperatura.prototype.Celsiuss = function ()
 {
   console.error("Dentro de Celsius");
   var calculado = (this.getValor() * 9/5)+32;
@@ -42,7 +42,7 @@ Temperatura.prototype.Celsius = function ()
   return calculado;
 };
 
-Temperatura.prototype.Farenheit = function ()
+Temperatura.prototype.Farenheits = function ()
 {
   console.error("Dentro de Farenheit");
   var calculado2= (this.getValor() - 32)*5/9;
@@ -51,7 +51,7 @@ Temperatura.prototype.Farenheit = function ()
   return calculado2;
 };
 
-Temperatura.prototype.Celsiuss = function (wValor)
+Temperatura.prototype.Celsius = function (wValor)
 {
   console.error("Dentro de Celsius");
   var calculado = (wValor * 9/5)+32;
@@ -60,7 +60,7 @@ Temperatura.prototype.Celsiuss = function (wValor)
   return calculado;
 };
 
-Temperatura.prototype.Farenheits = function (wValor)
+Temperatura.prototype.Farenheit = function (wValor)
 {
   console.error("Dentro de Farenheit");
   var calculado2= (wValor - 32)*5/9;
@@ -157,10 +157,10 @@ function calcular()
 
     if (ingresado.getTipo() == 'c' || ingresado.getTipo() == 'C') {
 
-      result = ingresado.Celsius();
+      result = ingresado.Celsiuss();
     }
     else {
-      result = ingresado.Farenheit();
+      result = ingresado.Farenheits();
 
     }
 
