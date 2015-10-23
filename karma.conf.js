@@ -31,7 +31,8 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-      'gulpfile.js'
+      'gulpfile.js',
+      'static-server.js'
     ],
 
 
