@@ -47,18 +47,20 @@ describe("Testing con BDD", function() {
 });
 
     it("Deberia poder convertir Celsius a Farenheit", function() {
+      window.onload = function() {
       var calculado = new Temperatura();
-      calculado.setValor(0);
-      calculado.setTipo('C');
+      original.value = "0C";
       var resultado =calculado.Celsius();
       expect(resultado).to.equal("32.0 Farenheit");
+      };
     });
     it("Deberia poder convertir Farenheit a Celsius", function() {
+      window.onload = function() {
       var calculado = new Temperatura();
-      calculado.setValor(43);
-      calculado.setTipo("F");
+      original.value = "43F";
       var resultado =calculado.Farenheit();
       expect(resultado).to.equal("6.1 Celsius");
+      };
     });
     // it("Deberia poder llamar al metodo calcular", function() {
     //   var calculado = new Temperatura();
@@ -68,25 +70,5 @@ describe("Testing con BDD", function() {
     //   expect(resultado).to.equal("6.1 Celsius");
     // });
   });
-  describe("#Calculando:Ahora con Sinon", function() {
 
-    it("Deberia poder convertir 0C a 32.0F", function() {
-      var calculado = new Temperatura();
-      calculado.setValor(0);
-      calculado.setTipo('C');
-      var resultado =calculado.Celsius();
-      //expect(resultado).to.equal("32.0 Farenheit");
-      sinon.assert.notCalled(console.error);
-      sinon.assert.calledOnce(console.log);
-      sinon.assert.calledWithExactly(console.log, "32.0 Farenheit");
-    });
-    it("Deberia sacar error al introducir 43X ", function() {
-      expect(function() {
-        (new Temperatura()).calcular("43X");
-        sinon.assert.notCalled(console.log);
-        // sinon.assert.calledOnce(console.error);
-        sinon.assert.calledWithExactly(console.error, "missing target");
-      });
-    });
-  });
 });
