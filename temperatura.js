@@ -138,7 +138,7 @@ function descomponerInput()
 }
 
 
-function calcular()
+Temperatura.prototype.calcular = function()
 {
   var result;
   var original = document.getElementById("original");
