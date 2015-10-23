@@ -39,7 +39,7 @@ describe("Testing con BDD", function() {
 
   describe("#Calculando:Converting", function() {
     it("Deberia sacar error al introducir 43X", function() {
-      entrada.value = "0C";
+      original.value = "0C";
       calcularW();
       expect(converted.innerHTML).to.equal("¡ERROR! Intente con valores correctos [-,+] [Número] [Medida] e.g: '-4.2C' ");
     });
