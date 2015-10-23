@@ -48,18 +48,18 @@ describe("Testing con BDD", function() {
 
     it("Deberia poder convertir Celsius a Farenheit", function() {
       window.onload = function() {
-      var calculado = new Temperatura();
+
       original.value = "0C";
-      var resultado =calculado.Celsius();
-      expect(resultado).to.equal("32.0 Farenheit");
+      calcularW();
+      expect(converted.innerHTML).to.equal("32.0 Farenheit");
       };
     });
     it("Deberia poder convertir Farenheit a Celsius", function() {
       window.onload = function() {
-      var calculado = new Temperatura();
+
       original.value = "43F";
-      var resultado =calculado.Farenheit();
-      expect(resultado).to.equal("6.1 Celsius");
+      calcularW();
+      expect(converted.innerHTML).to.equal("6.1 Celsius");
       };
     });
     // it("Deberia poder llamar al metodo calcular", function() {
