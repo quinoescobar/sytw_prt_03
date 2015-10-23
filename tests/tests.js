@@ -36,15 +36,37 @@ describe("Testing con BDD", function() {
       expect(paraCalcular.getTipo()).to.equal("Farenheit");
     });
   });
+  describe("#Calculando:Con Calcular-Herencia", function() {
+    it("Deberia sacar error al introducir 43X", function() {
+      expect(function() {
+        (new Temperatura()).calcular("43X");
+      }).to.throw(Error);
+    });
 
-  describe("#Calculando:Converting", function() {
+    it("Deberia poder convertir Celsius a Farenheit", function() {
+      var calculado = new Temperatura();
+      calculado.setValor(0);
+      calculado.setTipo('C');
+      var resultado =calculado.Celsius();
+      expect(resultado).to.equal("32.0 Farenheit");
+    });
+    it("Deberia poder convertir Farenheit a Celsius", function() {
+      var calculado = new Temperatura();
+      calculado.setValor(43);
+      calculado.setTipo("F");
+      var resultado =calculado.Farenheit();
+      expect(resultado).to.equal("6.1 Celsius");
+    });
+
+  });
+  describe("#Calculando:Calculando con Web Workers", function() {
     it("Deberia sacar error al introducir 43X", function() {
       window.onload = function() {
         original.value = "43X";
         calcularW();
         expect(converted.innerHTML).to.equal("¡ERROR! Intente con valores correctos [-,+] [Número] [Medida] e.g: '-4.2C' ");
-      };
-});
+        };
+      });
 
     it("Deberia poder convertir Celsius a Farenheit", function() {
       window.onload = function() {
