@@ -33,6 +33,24 @@ function Temperatura(valor,tipo)
 
 Temperatura.prototype= new Medida();
 
+Temperatura.prototype.Celsius = function ()
+{
+  console.error("Dentro de Celsius");
+  var calculado = (this.getValor() * 9/5)+32;
+  calculado = calculado.toFixed(1)+" Farenheit";
+
+  return calculado;
+};
+
+Temperatura.prototype.Farenheit = function ()
+{
+  console.error("Dentro de Farenheit");
+  var calculado2= (this.getValor() - 32)*5/9;
+  calculado2 = calculado2.toFixed(1)+" Celsius";
+
+  return calculado2;
+};
+
 Temperatura.prototype.Celsius = function (wValor)
 {
   console.error("Dentro de Celsius");
