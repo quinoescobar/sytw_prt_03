@@ -51,7 +51,7 @@ Temperatura.prototype.Farenheit = function ()
   return calculado2;
 };
 
-Temperatura.prototype.Celsius = function (wValor)
+Temperatura.prototype.Celsiuss = function (wValor)
 {
   console.error("Dentro de Celsius");
   var calculado = (wValor * 9/5)+32;
@@ -60,7 +60,7 @@ Temperatura.prototype.Celsius = function (wValor)
   return calculado;
 };
 
-Temperatura.prototype.Farenheit = function (wValor)
+Temperatura.prototype.Farenheits = function (wValor)
 {
   console.error("Dentro de Farenheit");
   var calculado2= (wValor - 32)*5/9;
