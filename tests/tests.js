@@ -47,14 +47,14 @@ describe("Testing con BDD", function() {
       var calculado = new Temperatura();
       calculado.setValor(0);
       calculado.setTipo('C');
-      var resultado =calculado.calcular();
+      var resultado =calculado.Celsiuss();
       expect(resultado).to.equal("32.0 Farenheit");
     });
     it("Deberia poder convertir Farenheit a Celsius", function() {
       var calculado = new Temperatura();
       calculado.setValor(43);
       calculado.setTipo("F");
-      var resultado =calculado.calcular();
+      var resultado =calculado.Farenheits();
       expect(resultado).to.equal("6.1 Celsius");
     });
 
