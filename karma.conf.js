@@ -33,7 +33,7 @@ module.exports = function(config) {
     exclude: [
       'gulpfile.js',
       'static-server.js',
-      'test/sinon_test.js'
+      'tests/sinon_test.js'
     ],
 
 

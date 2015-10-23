@@ -39,9 +39,9 @@ describe("Testing con BDD", function() {
 
   describe("#Calculando:Converting", function() {
     it("Deberia sacar error al introducir 43X", function() {
-      expect(function() {
-        (new Temperatura()).calcular("43X");
-      }).to.throw(Error);
+      entrada.value = "0C";
+      calcularW();
+      expect(converted.innerHTML).to.equal("¡ERROR! Intente con valores correctos [-,+] [Número] [Medida] e.g: '-4.2C' ");
     });
 
     it("Deberia poder convertir Celsius a Farenheit", function() {
